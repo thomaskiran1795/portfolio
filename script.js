@@ -7,7 +7,7 @@
    ROLE CYCLE — Hero animated label
    ------------------------------------------ */
 (function initRoleCycle() {
-  const roles = ['Podcaster.', 'Author.', 'Leader.', 'Builder.', 'Speaker.'];
+  const roles = ['Tech Builder.', 'Scrum master.', 'Leader.', 'UX Expert.', 'Mentor.'];
   let currentIndex = 0;
   const el = document.getElementById('roleCycle');
 
