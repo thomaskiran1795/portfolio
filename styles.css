@@ -70,7 +70,7 @@ body {
 }
 
 /* GRID */
-.grid-3 {
+.grid-6 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -79,7 +79,7 @@ body {
 /* CARD */
 .card {
   padding: 30px;
-  background: #111;
+  background: #242424;
   border-radius: 12px;
 }
 
