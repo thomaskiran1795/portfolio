@@ -1,24 +1,101 @@
-.premium-hero {
-  padding: 120px 80px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-.premium-hero h1 {
-  font-size: 56px;
-  line-height: 1.2;
-  font-weight: 600;
-  max-width: 900px;
+body {
+  background: #0b0b0b;
+  color: #fff;
+  line-height: 1.6;
 }
 
-.subtext {
-  margin-top: 20px;
-  color: #aaa;
-  max-width: 600px;
-  font-size: 18px;
-}
-
-.hero-metrics {
-  margin-top: 30px;
+/* NAV */
+.nav {
   display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #aaa;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 800px;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+/* BUTTON */
+.btn {
+  background: white;
+  color: black;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+/* SECTION */
+.section {
+  padding: 80px 60px;
+}
+
+.section h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* GRID */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  font-weight: 500;
+}
+
+/* CARD */
+.card {
+  padding: 30px;
+  background: #111;
+  border-radius: 12px;
+}
+
+/* CASE */
+.case {
+  margin-bottom: 40px;
+}
+
+/* METRICS */
+.metrics h1 {
+  font-size: 48px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
 }
