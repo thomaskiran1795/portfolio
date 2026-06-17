@@ -72,6 +72,9 @@ nav {
   color: var(--coral);
 }
 
+.btn-primary:hover {
+  background: var(--coral-dark);
+}
 /* =============================================
    HERO
    ============================================= */
