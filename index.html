@@ -1,358 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Kiran | AI Product Manager</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    :root {
-      --navy:        #0D1B2A;
-      --coral:       #D85A30;
-      --coral-dark:  #C04D26;
-      --cream:       #FAF9F6;
-      --sand:        #F2EFE8;
-      --border:      #E8E5DF;
-      --text-primary:   #1A1A1A;
-      --text-secondary: #555555;
-      --text-muted:     #999999;
-    }
+<title>Thomas Kiran | Product Designer</title>
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--navy);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-name { font-weight: 600; color: var(--cream); font-size: 15px; letter-spacing: 0.02em; }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a {
-      color: rgba(250,249,246,0.65);
-      font-size: 13px;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--coral); }
-
-    /* ── DOWNLOAD CV BUTTON ── */
-    .btn-nav-cv {
-      background: transparent;
-      color: var(--coral);
-      border: 1px solid var(--coral);
-      padding: 0.4rem 1rem;
-      font-size: 12px;
-      font-weight: 500;
-      border-radius: 3px;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-nav-cv:hover { background: var(--coral); color: var(--cream); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--navy);
-      padding: 5rem 2rem 4rem;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-    }
-    .hero-inner { max-width: 820px; margin: 0 auto; }
-    .hero-eyebrow {
-      font-size: 12px; letter-spacing: 0.15em; color: var(--coral);
-      text-transform: uppercase; font-weight: 500; margin-bottom: 1.5rem;
-    }
-    .hero-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 1rem;
-    }
-    .hero-role-line {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-style: italic; color: rgba(250,249,246,0.55); line-height: 1.3; margin-bottom: 2rem;
-    }
-    .role-cycle {
-      color: var(--coral); font-style: italic;
-      border-bottom: 1px solid rgba(216,90,48,0.4);
-      transition: opacity 0.4s ease;
-    }
-    .hero-bio {
-      font-size: 15px; line-height: 1.8;
-      color: rgba(250,249,246,0.7); max-width: 600px; margin-bottom: 2.5rem;
-    }
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* ── BUTTONS ── */
-    .btn-primary {
-      background: var(--coral); color: var(--cream); border: none;
-      padding: 0.75rem 1.75rem; font-size: 14px; font-weight: 500;
-      border-radius: 3px; cursor: pointer; letter-spacing: 0.02em;
-      text-decoration: none; display: inline-block; transition: background 0.2s;
-    }
-    .btn-primary:hover { background: var(--coral-dark); }
-    .btn-ghost {
-      background: transparent; color: rgba(250,249,246,0.75);
-      border: 1px solid rgba(250,249,246,0.25);
-      padding: 0.75rem 1.75rem; font-size: 14px; font-weight: 400;
-      border-radius: 3px; cursor: pointer; text-decoration: none;
-      display: inline-block; transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: rgba(250,249,246,0.6); color: var(--cream); }
-    .btn-ghost.dark { color: #555; border-color: #ccc; }
-    .btn-ghost.dark:hover { border-color: #888; color: var(--text-primary); }
-
-    /* ── IMPACT BAR ── */
-    .impact { background: var(--cream); padding: 3.5rem 2rem; border-bottom: 1px solid var(--border); }
-    .impact-grid {
-      max-width: 820px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    }
-    .impact-item { padding: 1.5rem 1rem; border-right: 1px solid var(--border); text-align: center; }
-    .impact-item.no-border { border-right: none; }
-    .impact-num {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.4rem; font-weight: 700; color: var(--navy); line-height: 1;
-    }
-    .impact-num sup { font-size: 1.2rem; vertical-align: super; }
-    .impact-label { font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.4rem; line-height: 1.4; }
-
-    /* ── SHARED SECTIONS ── */
-    section { padding: 4rem 2rem; }
-    .section-inner { max-width: 820px; margin: 0 auto; }
-    .section-inner.center { text-align: center; }
-    .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--coral); font-weight: 500; margin-bottom: 0.75rem; }
-    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; color: var(--navy); margin-bottom: 2.5rem; line-height: 1.25; }
-
-    /* ── EXPERIENCE ── */
-    .exp-section { background: var(--cream); }
-    .exp-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
-    .exp-item.last { border-bottom: none; margin-bottom: 0; }
-    .exp-year { font-size: 12px; color: var(--text-muted); padding-top: 3px; }
-    .exp-company { font-size: 12px; font-weight: 600; color: var(--coral); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; }
-    .exp-role { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; }
-    .exp-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-
-    /* ── PROJECTS ── */
-    .projects-section { background: var(--sand); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
-    .project-card { background: var(--cream); border-radius: 4px; padding: 1.5rem; border: 1px solid #E0DDD5; }
-    .project-tag { font-size: 11px; color: var(--coral); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
-    .project-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.35; }
-    .project-desc { font-size: 13px; color: #666; line-height: 1.6; }
-    .project-metric { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 13px; color: var(--navy); font-weight: 500; }
-    .project-metric span { color: var(--coral); }
-
-    /* ── CONTACT ── */
-    .contact-section { background: var(--cream); }
-    .contact-sub { font-size: 16px; color: #666; line-height: 1.7; margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    /* ── FOOTER ── */
-    footer { background: var(--navy); padding: 1.5rem 2rem; text-align: center; }
-    footer p { font-size: 12px; color: rgba(250,249,246,0.35); letter-spacing: 0.04em; }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      nav { flex-direction: column; gap: 0.75rem; padding: 1rem; }
-      .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
-      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .exp-year { padding-top: 0; }
-      .impact-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .impact-item.no-border { border-bottom: none; }
-    }
-  </style>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
+
+<header class="nav">
+  <div class="logo">Thomas Kiran</div>
   <nav>
-    <span class="nav-name">Thomas Kiran</span>
-    <div class="nav-links">
-      <!-- ✅ DOWNLOAD CV BUTTON — place your PDF as Thomas_Kiran_CV.pdf next to this file -->
-      <a href="Thomas Kiran_Product Manager_Resume.pdf" download class="btn-nav-cv">⬇ Download CV</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Impact</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a href="index.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Product Manager · Bangalore, India</p>
-      <h1 class="hero-name">Thomas Kiran</h1>
-      <p class="hero-role-line"><span class="role-cycle" id="roleCycle">Tech Builder.</span></p>
-      <p class="hero-bio">I'm a Product Manager focused on building AI-driven systems at scale. With experience across FinTech, SaaS, E-commerce, and Industrial Automation, I drive product strategy and execution to deliver scalable, high-impact solutions. I specialize in translating complex challenges into intuitive products that improve user experience and generate measurable business results.</p>
-      <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">See my work</a>
-        <a href="#contact" class="btn-ghost">Get in touch</a>
-      </div>
+<!-- HERO -->
+
+<section class="hero">
+  <h1>
+    Designing thoughtful digital products<br>
+    with clarity & impact.
+  </h1>
+
+  <p class="subtitle">
+    Senior Product Designer with 5+ years experience across FinTech, SaaS, and E-commerce.
+  </p>
+</section>
+
+<!-- WORK -->
+
+<section class="work">
+  <h2>Selected Work</h2>
+
+  <a href="case-ai-dashboard.html" class="project">
+    <div class="project-content">
+      <h3>AI Automation Dashboard</h3>
+      <p>
+        Designed an AI-powered dashboard to help industrial operators
+        monitor systems and take faster decisions.
+      </p>
     </div>
-  </section>
+    <span class="arrow">→</span>
+  </a>
 
-  <div class="impact">
-    <div class="impact-grid">
-      <div class="impact-item"><div class="impact-num">6<sup>+</sup></div><div class="impact-label">Years in tech leadership</div></div>
-      <div class="impact-item no-border"><div class="impact-num">8<sup>+</sup></div><div class="impact-label">Product launches</div></div>
+  <a href="case-finance-app.html" class="project">
+    <div class="project-content">
+      <h3>Finance Management App</h3>
+      <p>
+        Improved onboarding and multi-step form UX,
+        increasing completion rates and reducing drop-offs.
+      </p>
     </div>
-  </div>
+    <span class="arrow">→</span>
+  </a>
 
-  <section class="exp-section" id="work">
-    <div class="section-inner">
-      <p class="section-label">Experience</p>
-      <h2 class="section-title">Where I've built</h2>
-
-      <div class="exp-item reveal">
-        <div class="exp-year">Oct 2025 — Jun 2026</div>
-        <div>
-          <p class="exp-company">Quest Global · Client ABB</p>
-          <p class="exp-role">Product Manager, AI</p>
-          <p class="exp-desc">Led end-to-end product strategy for ABB Ability System 800xA (Batch Management), an AI-powered industrial automation platform integrating real-time sensor data, AI-driven insights, and operator decision workflows.</p>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-year">2024 — 2025</div>
-        <div>
-          <p class="exp-company">Autovert</p>
-          <p class="exp-role">Product Manager</p>
-          <p class="exp-desc">Optimized conversion for partner insurance products by identifying funnel drop-offs, redesigning purchase journeys, and leveraging A/B testing. Owned end-to-end lifecycle for a B2C e-commerce platform and an NBFC lending application. Led and mentored a cross-functional team of 12+ engineers, designers, and marketers across two agile squads.</p>
-        </div>
-      </div>
-
-      <div class="exp-item last reveal">
-        <div class="exp-year">2022 — 2024</div>
-        <div>
-          <p class="exp-company">Kinlong Hardware</p>
-          <p class="exp-role">Associate Product Manager & UX Lead</p>
-          <p class="exp-desc">Led product discovery and design for Procurement Software, B2B e-commerce in India, and B2C platforms across Vietnam, China, Philippines, and Sri Lanka — adapting solutions to diverse cultural, behavioral, and regulatory contexts.</p>
-        </div>
-      </div>
+  <a href="case-procurement.html" class="project">
+    <div class="project-content">
+      <h3>B2B Procurement Platform</h3>
+      <p>
+        Built scalable UX systems for global marketplaces across
+        multiple countries and regulatory environments.
+      </p>
     </div>
-  </section>
+    <span class="arrow">→</span>
+  </a>
 
-  <section class="projects-section" id="projects">
-    <div class="section-inner">
-      <p class="section-label">Case Study</p>
-      <h2 class="section-title">Things I'm proud of</h2>
-      <div class="projects-grid">
+</section>
 
-        <div class="project-card reveal">
-          <p class="project-tag">AI · Automation</p>
-          <p class="project-title">Human+AI Decision Support at ABB</p>
-          <p class="project-desc">Led product strategy for ABB Ability System 800xA, integrating real-time sensor data and AI-driven insights into operator decision workflows.</p>
-          <p class="project-metric">Outcome: <span>25–35% faster</span> operator decision-making</p>
-        </div>
+<!-- FOOTER -->
 
-        <div class="project-card reveal">
-          <p class="project-tag">Fintech · Product</p>
-          <p class="project-title">NBFC Lending App at Autovert</p>
-          <p class="project-desc">Owned roadmap and go-live planning for an NBFC lending application — driving conversion flows, funnel analysis, and UX improvements end-to-end.</p>
-          <p class="project-metric">Outcome: <span>Improved insurance upsell</span> via A/B-tested purchase flows</p>
-        </div>
+<footer class="footer">
+  <p>© 2026 Thomas Kiran</p>
+</footer>
 
-        <div class="project-card reveal">
-          <p class="project-tag">B2B · Ecommerce</p>
-          <p class="project-title">Multi-market B2B E-Commerce at Kinlong</p>
-          <p class="project-desc">Drove product discovery and design for B2B and B2C platforms across 4 Asian markets — adapting for cultural and regulatory variance.</p>
-          <p class="project-metric">Outcome: <span>25% reduction</span> in design handoff time via unified design system</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-section" id="contact">
-    <div class="section-inner center">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Let's build something together</h2>
-      <p class="contact-sub">Open to full-time PM roles, advisory, and select consulting. Always happy to connect with fellow PMs and product thinkers.</p>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/thomas-kiran-PM" target="_blank" class="btn-primary">Connect on LinkedIn</a>
-        <a href="thomasravikiran95@gmail.com" class="btn-ghost dark">Send an email</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Thomas Ravi Kiran · Bangalore, India</p>
-  </footer>
-
-  <script>
-    // Role cycle
-    (function() {
-      var roles = ['Tech Builder.', 'Scrum Master.', 'Leader.', 'UX Expert.', 'Mentor.'];
-      var idx = 0;
-      var el = document.getElementById('roleCycle');
-      if (!el) return;
-      setInterval(function() {
-        el.style.opacity = '0';
-        setTimeout(function() {
-          idx = (idx + 1) % roles.length;
-          el.textContent = roles[idx];
-          el.style.opacity = '1';
-        }, 400);
-      }, 2200);
-    })();
-
-    // Scroll reveal
-    (function() {
-      var items = document.querySelectorAll('.reveal');
-      if (!items.length) return;
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      items.forEach(function(el) { observer.observe(el); });
-    })();
-
-    // Active nav on scroll
-    (function() {
-      var sections = document.querySelectorAll('section[id]');
-      var links = document.querySelectorAll('.nav-links a[href^="#"]');
-      if (!sections.length || !links.length) return;
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            var id = entry.target.getAttribute('id');
-            links.forEach(function(a) {
-              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-            });
-          }
-        });
-      }, { rootMargin: '-30% 0px -60% 0px' });
-      sections.forEach(function(s) { observer.observe(s); });
-    })();
-  </script>
 </body>
 </html>
