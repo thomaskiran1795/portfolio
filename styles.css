@@ -2,83 +2,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: #111;
-  background: #fff;
-  line-height: 1.6;
+font-family: 'Inter', sans-serif;
+color: #111;
 }
 
-/* NAV */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 60px;
-  position: sticky;
-  top: 0;
-  background: white;
+display: flex;
+justify-content: space-between;
+padding: 20px 60px;
+border-bottom: 1px solid #eee;
 }
 
 .nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #555;
+margin-left: 20px;
+text-decoration: none;
+color: #555;
 }
 
-/* HERO */
 .hero {
-  padding: 120px 60px;
-  max-width: 900px;
+padding: 120px 60px;
+max-width: 900px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: 600;
-  margin-bottom: 20px;
+font-size: 48px;
 }
 
-.hero p {
-  color: #666;
-}
-
-/* WORK */
 .work {
-  padding: 80px 60px;
-}
-
-.work h2 {
-  margin-bottom: 40px;
+padding: 80px 60px;
 }
 
 .project {
-  margin-bottom: 40px;
-  cursor: pointer;
+display: block;
+margin-bottom: 50px;
+text-decoration: none;
+color: inherit;
+transition: 0.3s;
 }
 
-.project h3 {
-  font-size: 24px;
+.project:hover {
+transform: translateX(10px);
 }
 
-.project p {
-  color: #666;
+.case {
+padding: 100px 60px;
+max-width: 800px;
 }
 
-/* ABOUT */
-.about {
-  padding: 80px 60px;
-  max-width: 700px;
+.case h1 {
+margin-bottom: 20px;
 }
 
-/* CONTACT */
-.contact {
-  padding: 80px 60px;
-}
-
-/* FOOTER */
-footer {
-  padding: 40px;
-  text-align: center;
-  color: #888;
+.case p {
+color: #555;
+line-height: 1.7;
 }
