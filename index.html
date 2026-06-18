@@ -1,11 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thomas Kiran | Product Designer</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Thomas Kiran | Product Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 80px;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+.nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #555;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  padding: 140px 80px 100px;
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #666;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: 1px solid #111;
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* WORK */
+.work {
+  padding: 100px 80px;
+}
+
+.work h2 {
+  margin-bottom: 50px;
+}
+
+.project {
+  margin-bottom: 60px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateX(10px);
+}
+
+.project h3 {
+  font-size: 26px;
+}
+
+.project p {
+  color: #666;
+  margin-top: 6px;
+}
+
+/* CASE STUDY */
+.case-study {
+  padding: 100px 80px;
+  border-top: 1px solid #eee;
+  display: none;
+}
+
+.case-study.active {
+  display: block;
+}
+
+.case-study h2 {
+  margin-bottom: 20px;
+}
+
+.case-study p {
+  max-width: 700px;
+  color: #555;
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 80px;
+  max-width: 700px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 100px 80px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #999;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .nav, .hero, .work, .about, .contact, .case-study {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -20,39 +176,58 @@
 </header>
 
 <section class="hero">
-  <h1>
-    Designing thoughtful digital products<br/>
-    with clarity & impact.
-  </h1>
-  <p>Senior Product Designer | FinTech • SaaS • E-commerce</p>
+  <h1>Designing digital products with clarity, simplicity & impact.</h1>
+  <p>Senior Product Designer • FinTech • SaaS • E-commerce</p>
+  <a href="#" class="btn">Download Resume</a>
 </section>
 
 <section id="work" class="work">
   <h2>Selected Work</h2>
 
-  <div class="project">
+  <div class="project" onclick="openCase('case1')">
     <h3>AI Automation Dashboard</h3>
-    <p>Transforming industrial workflows with AI-driven insights.</p>
+    <p>Industrial AI insights for faster decisions</p>
   </div>
 
-  <div class="project">
+  <div class="project" onclick="openCase('case2')">
     <h3>Finance Management App</h3>
-    <p>Improved form completion rates through UX optimization.</p>
+    <p>Reduced drop-offs with UX optimization</p>
   </div>
 
-  <div class="project">
+  <div class="project" onclick="openCase('case3')">
     <h3>B2B Procurement Platform</h3>
-    <p>Designed scalable UX for global marketplaces.</p>
+    <p>Global scalable UX system</p>
   </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="case1" class="case-study">
+  <h2>AI Automation Dashboard</h2>
+  <p>
+    Redesigned operator dashboards for industrial automation by integrating AI-driven alerts and predictive insights.
+    Improved decision-making speed and reduced downtime.
+  </p>
+</section>
+
+<section id="case2" class="case-study">
+  <h2>Finance Management App</h2>
+  <p>
+    Improved form completion rates by simplifying multi-step flows, adding inline validation, and reducing cognitive load.
+  </p>
+</section>
+
+<section id="case3" class="case-study">
+  <h2>B2B Procurement Platform</h2>
+  <p>
+    Designed a scalable UX system across multiple countries considering cultural and regulatory differences.
+  </p>
 </section>
 
 <section id="about" class="about">
   <h2>About</h2>
   <p>
-    I’m a Senior Product Designer with 5+ years of experience
-    designing user-centered solutions across FinTech, SaaS,
-    and E-commerce platforms. I focus on simplifying complex
-    systems and delivering meaningful user experiences.
+    I’m a Senior Product Designer with 5+ years of experience building scalable digital products across FinTech, SaaS,
+    and E-commerce. I focus on simplifying complex systems and delivering high-impact user experiences.
   </p>
 </section>
 
@@ -66,7 +241,19 @@
   <p>© 2026 Thomas Kiran</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+function openCase(id) {
+  document.querySelectorAll(".case-study").forEach(sec => {
+    sec.classList.remove("active");
+  });
+
+  document.getElementById(id).classList.add("active");
+
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
 
 </body>
 </html>
